@@ -5,18 +5,28 @@
 #and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in
 #a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers
 import math
-num = 19
+num = 2
 
-# declaring variables
-happy_num = 0
-last_dig = 0
+#delcaring a list to store values coming out of sum operation
+seen = []
+if num == 1:
+    print('True')
+else:
+    while num != 1:
+        current = num
+        sum = 0
+        while current != 0:
+            sum += (current%10) * (current%10)
+            current = current // 10
+            print("sum -- ", sum)
+        num = sum
 
-while num != 0:
-    last_dig = num % 10
-    num = math.floor(num // 10)
-    # using the mod operator to store the last digit of an integer
-    happy_num = (last_dig * last_dig) + happy_num
-    num = happy_num
+        if seen.__contains__(sum):
+            print('false')
+            break
+        else:
+            seen.append(sum)
+        print('true')
 
 
 
