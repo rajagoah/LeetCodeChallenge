@@ -5,7 +5,7 @@
 #and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in
 #a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers
 import math
-num = 2
+num = 19
 
 #delcaring a list to store values coming out of sum operation
 seen = []
@@ -26,7 +26,8 @@ else:
             break
         else:
             seen.append(sum)
-        print('true')
+        if sum == 1:
+            print('true')
 
 
 
