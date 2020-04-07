@@ -16,16 +16,16 @@ def twoSum(nums, target):
     print("start here")
 
     #first iterator to add the elements to the dictionary
+    print("length ", len(nums))
     for i in range(len(nums)):
         dic[nums[i]] = nums.index(nums[i])
-
+    print(dic)
     #iterator for parsing the input list
     for j in range(len(nums)):
-        nums2 = nums[i+1:]
-        if dic.__contains__(target - nums[i]):
-            print(dic)
-            break
-
+        if dic.keys().__contains__(target - nums[j]):
+            print('target - nums', target - nums[j])
+            lst.append(dic.get(target - nums[j]))
+    print(lst)
 
 if __name__=="__main__":
     nums = [3,2,3]
