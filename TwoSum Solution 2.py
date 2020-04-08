@@ -9,6 +9,9 @@
 #Because nums[0] + nums[1] = 2 + 7 = 9,
 #return [0, 1].
 
+#importing pacakge
+from collections import defaultdict as dd
+
 def twoSum(nums, target):
     #declaring a list to store the index values
     lst = []
@@ -16,17 +19,24 @@ def twoSum(nums, target):
     print("start here")
 
     #first iterator to add the elements to the dictionary
-    print("length ", len(nums))
     for i in range(len(nums)):
-        dic[nums[i]] = nums.index(nums[i])
-    print(dic)
-    #iterator for parsing the input list
+        #using a variable to store the current value of the iterator to be used to extract correct indices
+        current = i
+
+        dic.setdefault(nums[i],[]).append(nums.index(nums[i],current))
+        #dic[nums[i]] = nums.index(nums[i],current)
+
+    print("dictionary is: ", dic)
+        #iterator for parsing the input list
     for j in range(len(nums)):
         if dic.keys().__contains__(target - nums[j]):
-            print('target - nums', target - nums[j])
+            print(dic.get(target - nums[j]))
             lst.append(dic.get(target - nums[j]))
-    print(lst)
+
+    #sorting the list in ascending order
+    lst.sort()
+    return lst
 
 if __name__=="__main__":
-    nums = [3,2,3]
-    print(twoSum(nums,6))
+    nums = [2,7,11,15]
+    print(twoSum(nums,9))
