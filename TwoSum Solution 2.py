@@ -15,6 +15,7 @@ from collections import defaultdict as dd
 def twoSum(nums, target):
     #declaring a list to store the index values
     lst = []
+    lst_2 = []
     dic = {}
     print("start here")
 
@@ -30,12 +31,16 @@ def twoSum(nums, target):
         #iterator for parsing the input list
     for j in range(len(nums)):
         if dic.keys().__contains__(target - nums[j]):
-            print(dic.get(target - nums[j]))
             lst.append(dic.get(target - nums[j]))
+    for k in lst:
+        print(k)
+        lst_2.append(k[0])
+    print('list 2 is: ',lst_2)
 
     #sorting the list in ascending order
+    lst_2.sort()
     lst.sort()
-    return lst
+    return lst_2
 
 if __name__=="__main__":
     nums = [2,7,11,15]
