@@ -1,15 +1,8 @@
-class nodes():
-    def __init__(self, dataval = None):
-        self.dataval = dataval
-        self.nextval = None
+class Computer():
+    pass
 
-if __name__ == "__main__":
-    #assigning value to data element
-    e1 = nodes("mon")
-    e2 = nodes("tue")
-    e3 = nodes("wed")
+c1 = Computer()
+c2 = Computer()
 
-    #assigning value to pointer variable
-    e1.nextval = e2
-    e2.nextval = e3
-
+print("id ", id(c1))
+print("id ", id(c2))
