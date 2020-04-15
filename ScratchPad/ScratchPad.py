@@ -14,11 +14,6 @@ class linked():
 
     def printing(self):
         data = self.head
-        print("the data type of the incoming variable   : ", type(data))
-        print("the value is                             : ", data.d)
-        print("the address of value is                  : ", data)
-        print("the address of value in second node is   : ", data.next)
-        print("the value is                             : ", data.next.d)
         while data is not None:
             print(data.d)
             data = data.next
@@ -29,8 +24,15 @@ class linked():
             self.head = NewNode
             return
         last = self.head
-        while(last.next):
+        print("the value contained in self.head     : ", type(self.head))
+        print("the variable last data type          : ", type(last))
+        print("the variable last address is         : ", last)
+        print("the value in the last variable is    : ", last.d)
+        print("the value in the last.next           : ", last.next.d)
+        print("the data type of last.next is        : ", type(last.next))
+        while last.next is not None:
             last = last.next
+            print("inside loop ", last.d)
         last.next = NewNode
 
 
@@ -67,10 +69,9 @@ if __name__=="__main__":
     #print("the address of x2 is     : ", x2)
     #print("the value of x2 is       : ", x2.d)
 
+    #adding an element to the end
+    combined_obj.AtEnd(3)
+
     #printing the linked list
     combined_obj.printing()
-
-    #adding an element to the end
-    linked.AtEnd("3")
-
 
